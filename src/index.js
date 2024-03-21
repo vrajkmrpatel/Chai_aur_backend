@@ -17,7 +17,7 @@ import { express } from "express";
 const app = express()
 
 
-(async () => {
+;(async () => {
     try {
        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
        app.on("error",(error) => {
@@ -30,7 +30,7 @@ const app = express()
        })
         
     } catch (error) {
-        console.log("ERROR: ", error);
+        console.error("ERROR: ", error);
         throw error
     }
 })()
